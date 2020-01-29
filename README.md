@@ -4,6 +4,8 @@ In order to complete these tasks you will need your newly aquired knowledge of c
 
 ##### Index
 
+* [Completed Project Link with sandbox](https://codesandbox.io/s/js-exercise-prototype-w572s?fontsize=14&hidenavigation=1&theme=dark)
+
 * [Instructions](#instructions)
 * [Get Started](#get-started)
 
@@ -28,6 +30,8 @@ Two options are included below.
   * The way you'll submit your work will be by pasting a link to your fork into the submission form.
 
   [LAUNCH ON CODESANDBOX 🚀](https://codesandbox.io/s/github/LambdaSchool/JS-Exercise-Prototype?previewwindow=browser)
+
+  
 
   <img alt='instructions Code Sandbox' src='./instructionsCodeSandbox.png'>
 </details>
