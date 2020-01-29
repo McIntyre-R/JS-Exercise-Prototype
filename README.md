@@ -29,6 +29,8 @@ Two options are included below.
 
   [LAUNCH ON CODESANDBOX 🚀](https://codesandbox.io/s/github/LambdaSchool/JS-Exercise-Prototype?previewwindow=browser)
 
+  * [Project Link on sandbox](https://codesandbox.io/s/js-exercise-prototype-w572s?fontsize=14&hidenavigation=1&theme=dark)
+
   <img alt='instructions Code Sandbox' src='./instructionsCodeSandbox.png'>
 </details>
 

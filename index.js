@@ -39,9 +39,25 @@ Airplane.prototype.land = function () {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person() {
-
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.stomach = [];
 }
+
+Person.prototype.eat = function(someFood) {
+  if (this.stomach.length < 10) {
+    return this.stomach.push(someFood);
+  } else {
+    return this.stomach;
+  }
+};
+Person.prototype.poop = function() {
+  return this.stomach.splice(0, this.stomach.length);
+};
+Person.prototype.toString = function() {
+  return `${this.name}, ${this.age}`;
+};
 
 /*
   TASK 2
@@ -57,9 +73,32 @@ function Person() {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
-
+function Car(model, milesPerGallon) {
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
+  this.odometer = 0;
 }
+
+Car.prototype.fill = function(gallons) {
+  return (this.tank = this.tank + gallons);
+};
+Car.prototype.drive = function(distance) {
+  const fuelUsed = distance / this.milesPerGallon;
+  this.odometer = this.odometer + distance;
+  this.tank = this.tank - fuelUsed;
+
+  if (this.tank < 0) {
+    const addOdo = this.tank * this.milesPerGallon;
+    this.odometer = this.odometer + addOdo;
+    this.tank = this.tank - this.tank;
+    return `I ran out of fuel at ${this.odometer} miles`;
+  } else if (this.tank === 0) {
+    return `I ran out of fuel at ${this.odometer} miles`;
+  } else {
+    return;
+  }
+};
 
 /*
   TASK 3
@@ -68,18 +107,24 @@ function Car() {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
-
+function Baby(name, age, favoriteToy) {
+  Person.call(this, name, age);
+  this.favoriteToy = favoriteToy;
 }
+
+Baby.prototype = Object.create(Person.prototype);
+Baby.prototype.play = function() {
+  return `Playing with ${this.favoriteToy}`;
+};
 
 /* 
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1.  When called in the global scope this refers to the window of js, the sum of the program
+  2.  When called within an object this is contextual to that object and will be tied to whatever object is left of the dot
+  3.  When using something like .call, or .bind it is explicitly being told what it refers to. 
+  4.  When this is used in a constructor its use is tied to whatever the object created from the constructor will be. 
 */
 
 
